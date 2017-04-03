@@ -1,0 +1,35 @@
+.movie-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.movie-poster {
+  margin: 15px;
+  height: 450px;
+  width: 300px;
+}
+
+.movie-info {
+  margin: 15px;
+  height: 450px;
+  width: calc(100% - 360px);
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 15px;
+}
+
+.movie-info h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.movie-info p {
+  padding: 10px;
+}

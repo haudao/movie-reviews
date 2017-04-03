@@ -1,0 +1,32 @@
+.movie-container
+:javascript
+  var movies = #{@movies.to_json};
+  for (i = 0; i < movies.length; i++) {
+    var mov_cont = document.getElementsByClassName('movie-container')[0];
+
+    var mov_item = document.createElement('div');
+    var mov_p = document.createElement('p');
+    var mov_a = document.createElement('a');
+    var mov_img = document.createElement('img');
+    var mov_span_rate = document.createElement('span');
+    var mov_span_rate_point = document.createElement('span');
+    var mov_span_max_rate_point = document.createElement('span');
+
+    mov_item.setAttribute('class', 'movie-item')
+    mov_p.innerHTML = movies[i].title;
+    mov_a.setAttribute('href', '#{movies_path}' +  '/' + movies[i].id);
+    mov_img.setAttribute('src', movies[i].poster);
+    mov_span_rate.setAttribute('class', 'rates');
+    mov_span_rate_point.setAttribute('class', 'rate-point');
+    mov_span_rate_point.innerHTML = movies[i].rating;
+    mov_span_max_rate_point.setAttribute('class', 'max-rate-point');
+    mov_span_max_rate_point.innerHTML = '/5';
+
+    mov_span_rate.appendChild(mov_span_rate_point);
+    mov_span_rate.appendChild(mov_span_max_rate_point);
+    mov_item.appendChild(mov_p);
+    mov_a.appendChild(mov_img);
+    mov_item.appendChild(mov_a);
+    mov_item.appendChild(mov_span_rate);
+    mov_cont.appendChild(mov_item);
+  }

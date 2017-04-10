@@ -1,9 +1,13 @@
 .movie-container
 :javascript
   var movies = #{@movies.to_json};
-  for (i = 0; i < movies.length; i++) {
-    var mov_cont = document.getElementsByClassName('movie-container')[0];
+  var mov_cont = document.getElementsByClassName('movie-container')[0];
 
+  while (mov_cont.firstChild) {
+    mov_cont.removeChild(mov_cont.firstChild);
+  }
+
+  for (i = 0; i < movies.length; i++) {
     var mov_item = document.createElement('div');
     var mov_p = document.createElement('p');
     var mov_a = document.createElement('a');

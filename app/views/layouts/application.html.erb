@@ -2,13 +2,46 @@
 <html>
 <head>
   <title>Movie Review</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid" style="width:90%">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">MR</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Trang chủ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user" style="padding:0 5px"></span> Đăng ký</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in" style="padding:0 5px"></span> Đăng nhập</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <%= yield %>
+
+<footer class="footer">
+  <div class="container">
+    <p>MovieReviews</p>
+  </div>
+</footer>
 
 </body>
 </html>

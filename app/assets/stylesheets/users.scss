@@ -1,3 +1,41 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.title {
+  color: #9d9d9d;
+  font-family: pacifico, cursive;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 100px;
+  text-align: center;
+}
+
+.sign-up-form {
+  float: none;
+  margin: 0 auto;
+  width: 400px;
+}
+
+button {
+  background-color: #222222;
+  border-color: #222222;
+  color: #ffffff;
+
+  line-height: 38px;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 5px;
+
+  font-size: 17px;
+}
+
+button:hover {
+  color: #9d9d9d;
+}
+
+.login-register {
+  text-align: center;
+}
+
+.help-block {
+  font-size: 12px;
+  margin: 2px auto;
+  text-align: right;
+}

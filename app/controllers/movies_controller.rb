@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  # before_filter :prepare_data, only: :index
+  # before_action :prepare_data, only: :index
 
   def index
     @movies = Movie.all

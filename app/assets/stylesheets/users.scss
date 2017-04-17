@@ -13,6 +13,12 @@
   width: 400px;
 }
 
+.sign-in-form {
+  float: none;
+  margin: 0 auto;
+  width: 400px;
+}
+
 button {
   background-color: #222222;
   border-color: #222222;
@@ -31,6 +37,10 @@ button:hover {
 }
 
 .login-register {
+  text-align: center;
+}
+
+.register-login {
   text-align: center;
 }
 

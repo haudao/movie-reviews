@@ -1,36 +1,36 @@
 .sign-up-form
-  %form.form-horizontal#new_user.new_user{"accept-charset" => "UTF-8", :action => "/users", :method => "post", :onsubmit => "return validateForm(this)"}
+  %form.form-horizontal#new_user.new_user{"accept-charset" => "UTF-8", :action => "/signup", :method => "post", :onsubmit => "return validateForm(this)"}
     = hidden_field_tag :authenticity_token, form_authenticity_token
     .form-group
       .cols-sm-10
         .input-group
           %span.input-group-addon
             %i.glyphicon.glyphicon-user
-          %input#username.form-control{ :name => "user[username]", :placeholder => "Tên người dùng", :type => "text"}/
+          %input#username.form-control{ name: 'user[username]', placeholder: 'Tên người dùng', type: 'text' }/
     .form-group
       .cols-sm-10
         .input-group
           %span.input-group-addon
             %i.glyphicon.glyphicon-envelope
-          %input#email.form-control{ :name => "user[email]", :placeholder => "Email", :type => "text" }/
+          %input#email.form-control{ name: 'user[email]', placeholder: 'Email', type: 'text' }/
     .form-group
       .cols-sm-10
         .input-group
           %span.input-group-addon
             %i.glyphicon.glyphicon-lock
-          %input#pwd.form-control{ :name => "user[password]", :placeholder => "Mật khẩu", :type => "password" }/
+          %input#pwd.form-control{ name: 'user[password]', placeholder: 'Mật khẩu', type: 'password' }/
     .form-group
       .cols-sm-10
         .input-group
           %span.input-group-addon
             %i.glyphicon.glyphicon-lock
-          %input#pwd_confirm.form-control{ :name => "user[password_confirmation]", :placeholder => "Xác nhận mật khẩu", :type => "password" }/
+          %input#pwd_confirm.form-control{ name: 'user[password_confirmation]', placeholder: 'Xác nhận mật khẩu', type: 'password' }/
     .form-group
-      %button{ :type => "submit" } Đăng ký
+      %button{ type: 'submit' } Đăng ký
     .login-register
       %p
         Đã có tài khoản?
-        %a{ :href => "#" } Đăng nhập
+        %a{ href: '/signin' } Đăng nhập
 
 - if @user.errors.any?
   :javascript

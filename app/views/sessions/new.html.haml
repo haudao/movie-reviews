@@ -1,0 +1,20 @@
+.sign-in-form
+  = form_tag signin_path, method: :post, class: 'form-horizontal' do
+    .form-group
+      .cols-sm-10
+        .input-group
+          %span.input-group-addon
+            %i.glyphicon.glyphicon-user
+          %input#username.form-control{ name: 'username', placeholder: 'Tên người dùng', type: 'text' }/
+    .form-group
+      .cols-sm-10
+        .input-group
+          %span.input-group-addon
+            %i.glyphicon.glyphicon-lock
+          %input#pwd.form-control{ name: 'password', placeholder: 'Mật khẩu', type: 'password' }/
+    .form-group
+      %button{ type: 'submit' } Đăng nhập
+    .register-login
+      %p
+        Chưa có tài khoản?
+        %a{ href: '/signup' } Đăng ký

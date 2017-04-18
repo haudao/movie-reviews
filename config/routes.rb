@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :movies, only: %i(index show)
+  resources :movies, only: %i(index show update) do
+    resources :comments
+  end
   resources :users, only: %i(new create)
   get '/signup' => 'users#new', :as => 'signup'
   post '/signup' => 'users#create'

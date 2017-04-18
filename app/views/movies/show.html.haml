@@ -1,1 +1,17 @@
 = render 'movie_wrapper', movie: @movie
+%hr
+.rating
+  %span.rate-point= @movie.rating
+  %span.max-rate-point /5
+  %p Có #{@movie.comments.all.length} đánh giá
+%hr
+- unless @movie.comments.all.empty?
+  - @movie.comments.each do |cmt|
+    - puts cmt.to_json
+    .comment
+      %img.user-img{ src: 'https://goo.gl/HhDG5d' }
+      .comment-details
+        %h4.comment-details-username= cmt.username
+        %p.comment-details-body= cmt.body
+        = render 'rating', rating: cmt.rating
+    %hr

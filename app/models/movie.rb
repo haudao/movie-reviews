@@ -3,6 +3,8 @@ require 'open-uri'
 class Movie < ActiveRecord::Base
   BASE_GALAXYCINE_URL = 'https://www.galaxycine.vn/phim-dang-chieu'.freeze
 
+  has_many :comments
+
   validates_uniqueness_of :title
 
   class << self

@@ -7,7 +7,7 @@
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 50px auto;
+  margin: 50px auto 15px auto;
   width: 80%;
 }
 
@@ -34,4 +34,36 @@
 
 .movie-info p {
   padding: 10px;
+}
+
+.rating {
+  display: inline-block;
+  margin-top: -50px;
+  text-align: center;
+  width: 100%;
+
+  .rate-point {
+    color: MediumSeaGreen;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 150px;
+    font-weight: bolder;
+  }
+
+  .max-rate-point {
+    color: MediumSeaGreen;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 80px;
+    font-weight: lighter;
+    margin-top: 70px;
+  }
+
+  p {
+    color: Black;
+    font-size: 13px;
+    font-style: italic;
+  }
+}
+
+hr {
+  width: 80%;
 }

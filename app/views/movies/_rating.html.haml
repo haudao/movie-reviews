@@ -1,0 +1,59 @@
+%fieldset.comment-details-rating
+  %input#star5{ name: 'rating', type: 'radio', value: '5' }/
+  %label.full{ for: 'star5' }
+  %input#star4half{ name: 'rating', type: 'radio', value: '4 and a half' }/
+  %label.half{ for: 'star4half' }
+  %input#star4{ name: 'rating', type: 'radio', value: '4' }/
+  %label.full{ for: 'star4' }
+  %input#star3half{ name: 'rating', type: 'radio', value: '3 and a half' }/
+  %label.half{ for: 'star3half' }
+  %input#star3{ name: 'rating', type: 'radio', value: '3' }/
+  %label.full{ for: 'star3' }
+  %input#star2half{ name: 'rating', type: 'radio', value: '2 and a half' }/
+  %label.half{ for: 'star2half' }
+  %input#star2{ name: 'rating', type: 'radio', value: '2' }/
+  %label.full{ for: 'star2' }
+  %input#star1half{ name: 'rating', type: 'radio', value: '1 and a half' }/
+  %label.half{ for: 'star1half' }
+  %input#star1{ name: 'rating', type: 'radio', value: '1' }/
+  %label.full{ for: 'star1' }
+  %input#starhalf{ name: 'rating', type: 'radio', value: 'half' }/
+  %label.half{ for: 'starhalf' }
+
+:javascript
+  var rating = #{rating};
+  var rating_id
+  switch (rating) {
+    case 5:
+      rating_id = 'star5';
+      break;
+    case 4.5:
+      rating_id = 'star4half';
+      break;
+    case 4:
+      rating_id = 'star4';
+      break;
+    case 3.5:
+      rating_id = 'star3half';
+      break;
+    case 3:
+      rating_id = 'star3';
+      break;
+    case 2.5:
+      rating_id = 'star2half';
+      break;
+    case 2:
+      rating_id = 'star2';
+      break;
+    case 1.5:
+      rating_id = 'star1half';
+      break;
+    case 1:
+      rating_id = 'star1';
+      break;
+    default:
+      rating_id = 'starhalf';
+  }
+
+  var rating_elem = document.getElementById(rating_id);
+  rating_elem.checked = true;

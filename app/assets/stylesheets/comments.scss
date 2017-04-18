@@ -1,0 +1,66 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body { margin: 20px; }
+
+.comment {
+  align-items: center;
+  display: flex;
+  margin: auto;
+  padding: 12px;
+  width: 80%;
+}
+
+.user-img {
+  background-color: Grey;
+  border-radius: 100%;
+  flex: 0 0 100px;
+  height: 100px;
+}
+
+.comment-details {
+  padding-left: 24px;
+}
+
+.comment-details-username {
+  margin: 0 0 12px;
+}
+
+.comment-details-body {
+  margin: 12px auto;
+}
+
+.comment-details-rating {
+  border: 0;
+  float: left;
+  pointer-events: none;
+
+  > input { display: none; }
+
+  > label::before {
+    content: '\f005';
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    margin-right: 5px;
+  }
+
+  > .half::before {
+    content: '\f089';
+    position: absolute;
+  }
+
+  > label {
+    color: #ddd;
+    float: right;
+  }
+}
+
+.comment-details-rating > input:checked ~ label,
+.comment-details-rating:not(:checked) > label:hover,
+.comment-details-rating:not(:checked) > label:hover ~ label { color: Gold; }
+
+.comment-details-rating > input:checked + label:hover,
+.comment-details-rating > input:checked ~ label:hover,
+.comment-details-rating > label:hover ~ input:checked ~ label,
+.comment-details-rating > input:checked ~ label:hover ~ label { color: Khaki; }

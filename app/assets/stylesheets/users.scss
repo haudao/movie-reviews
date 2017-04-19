@@ -19,20 +19,18 @@
   width: 400px;
 }
 
-button {
-  background-color: #222222;
-  border-color: #222222;
-  color: #ffffff;
-
+.user-btn {
+  background-color: Black;
+  border-color: Black;
+  border-radius: 5px;
+  color: White;
+  font-size: 17px;
   line-height: 38px;
   vertical-align: middle;
   width: 100%;
-  border-radius: 5px;
-
-  font-size: 17px;
 }
 
-button:hover {
+.user-btn:hover {
   color: #9d9d9d;
 }
 

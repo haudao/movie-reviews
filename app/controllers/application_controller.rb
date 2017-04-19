@@ -16,9 +16,17 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def authenticate
+    logged_in? || access_denied
+  end
+
   def logged_in?
     current_user.is_a? User
   end
 
   helper_method :logged_in?
+
+  def access_denied
+    redirect_to @movie, alert: 'Vui lòng đăng nhập để bình luận!' and return false
+  end
 end

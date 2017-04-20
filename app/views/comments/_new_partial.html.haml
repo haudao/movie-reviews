@@ -21,7 +21,7 @@
 
   $(document).ready(function(){
     $("form").submit(function(e){
-      var rating = $('input[name=rating]:checked', '#new_comment').val();
+      var rating = $('input[name=rating-cmt-new]:checked', '#new_comment').val();
       if (rating != undefined) {
         document.getElementById('rating').setAttribute('value', rating);
       }

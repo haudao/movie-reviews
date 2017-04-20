@@ -1,0 +1,10 @@
+= div_for comment do
+  .comment
+    %img.user-img{ src: 'https://goo.gl/HhDG5d' }
+    .comment-details
+      %h4.comment-details-username= comment.username
+      %p.comment-details-body= comment.body
+      = render 'movies/rating', id: comment.id.to_s, rating: comment.rating
+    - if (logged_in? && comment.username == current_user.username)
+      = link_to '✖', [@movie, comment], method: :delete, remote: true, class: 'cmt-close'
+%hr

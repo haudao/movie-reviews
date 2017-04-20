@@ -10,6 +10,7 @@ body { margin: 20px; }
   display: flex;
   margin: auto;
   padding: 12px;
+  position: relative;
   width: 80%;
 }
 
@@ -84,4 +85,21 @@ body { margin: 20px; }
 
 .comment-btn:hover {
   color: #9d9d9d;
+}
+
+.cmt-form {
+  display: block;
+  margin: -10px auto 10px;
+  text-align: center;
+  width: 80%;
+}
+
+.cmt-close {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  vertical-align: middle;
+  right: 0;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
 }

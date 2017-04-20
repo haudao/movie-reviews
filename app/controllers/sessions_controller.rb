@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
   layout 'user'
 
+  before_filter :store_return_to
+
   def create
     user = User.authenticate(params[:username], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to session.delete(:return_to)
     else
       flash.now[:alert] = 'Tên người dùng hoặc mật khẩu không đúng!'
       render action: :new
@@ -14,6 +16,12 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to root_path, notice: 'Đăng xuất thành công.'
+    redirect_to :back, notice: 'Đăng xuất thành công.'
+  end
+
+  private
+
+  def store_return_to
+    session[:return_to] ||= request.referer
   end
 end

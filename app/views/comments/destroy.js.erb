@@ -1,0 +1,4 @@
+$("#<%= dom_id(@comment) %>").next().remove();
+$("#<%= dom_id(@comment) %>").remove();
+$('#rate-point').html("<%= @movie.rating.round(1) %>");
+$('#cmt-count').html("Có " + "<%= @movie.comments.length %>" + " đánh giá");

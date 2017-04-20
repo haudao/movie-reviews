@@ -1,1 +1,34 @@
-= render 'new_partial'
+.comment-form
+  = form_for([@movie, @movie.comments.new], remote: true, html: { class: 'form-horizontal' }) do |f|
+    .form-group
+      %input.form-control#username{ name: 'comment[username]',
+                                    type: 'text',
+                                    value: current_user.username,
+                                    style: 'display: none' }
+      %input.form-control#rating{ name: 'comment[rating]',
+                                  type: 'number',
+                                  style: 'display: none' }
+    .form-group
+      %textarea.form-control#comment{ rows: '3', name: 'comment[body]',
+                                      placeholder: 'Bình luận của bạn...' }
+    .form-group#rating-star
+      = render 'movies/rating', id: 'new', rating: 0
+      %span.help-block#user-msg{ style: 'display: none' } Vui lòng chọn đánh giá.
+    .form-group
+      %button.comment-btn{ type: 'submit' } Đăng bình luận
+:javascript
+  document.querySelector('[name="rating-cmt-new"]').parentElement.setAttribute('style', 'pointer-events: auto')
+
+  $(document).ready(function(){
+    $("form").submit(function(e){
+      var rating = $('input[name=rating-cmt-new]:checked', '#new_comment').val();
+      if (rating != undefined) {
+        document.getElementById('rating').setAttribute('value', rating);
+      }
+      else {
+        document.getElementById('rating-star').setAttribute('class', 'form-group has-error');
+        document.getElementById('user-msg').setAttribute('style', 'display: auto');
+        return false;
+      }
+    });
+  });

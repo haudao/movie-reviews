@@ -1,5 +1,5 @@
 .movie-container
-  
+
 :javascript
   var movies = #{@movies.to_json};
   var mov_cont = document.getElementsByClassName('movie-container')[0];
@@ -23,7 +23,7 @@
     mov_img.setAttribute('src', movies[i].poster);
     mov_span_rate.setAttribute('class', 'rates');
     mov_span_rate_point.setAttribute('class', 'rate-point');
-    mov_span_rate_point.innerHTML = movies[i].rating;
+    mov_span_rate_point.innerHTML = Math.round(movies[i].rating * 10) / 10;
     mov_span_max_rate_point.setAttribute('class', 'max-rate-point');
     mov_span_max_rate_point.innerHTML = '/5';
 

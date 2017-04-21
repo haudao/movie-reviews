@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
-  # before_action :prepare_data, only: :index
-
   def index
+    DataService.new.delay.crawl_data
     @movies = Movie.all
   end
 

@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'delayed_job_active_record'
 gem 'haml'
+gem 'i18n-js'
 gem 'nokogiri'
 
 # Use ActiveModel has_secure_password

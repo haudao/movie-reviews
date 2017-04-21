@@ -1,0 +1,14 @@
+vi:
+  usr_blank_err: 'Vui lòng nhập tên người dùng.'
+  usr_length_err: 'Tên người dùng phải có ít nhất 6 kí tự.'
+  usr_unique_err: 'Tên người dùng đã được sử dụng.'
+  usr_val_err: 'Tên người dùng không hợp lệ.'
+
+  email_blank_err: 'Vui lòng nhập email.'
+  email_unique_err: 'Email đã được sử dụng.'
+  email_val_err: 'Email không hợp lệ.'
+
+  pwd_blank_err: 'Vui lòng nhập mật khẩu.'
+  pwd_length_err: 'Mật khẩu phải có ít nhất 6 kí tự.'
+  pwd_confirm_blank_err: 'Vui lòng xác nhận mật khẩu.'
+  pwd_confirm_err: 'Không khớp mật khẩu, vui lòng xác nhận lại.'

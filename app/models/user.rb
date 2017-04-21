@@ -3,27 +3,27 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
 
-  validates_presence_of :username, message: 'Vui lòng nhập tên người dùng.'
+  validates_presence_of :username, message: I18n.t(:usr_blank_err)
   validates_length_of :username,
                       minimum: 6,
-                      message: 'Tên người dùng phải có ít nhất 6 kí tự.'
-  validates_uniqueness_of :username, message: 'Tên người dùng đã được sử dụng.'
+                      message: I18n.t(:usr_length_err)
+  validates_uniqueness_of :username, message: I18n.t(:usr_unique_err)
   validates_format_of :username,
                       with: /\A[a-zA-Z0-9_.-]+\z/,
-                      message: 'Tên người dùng không hợp lệ.'
-  validates_presence_of :email, message: 'Vui lòng nhập email.'
-  validates_uniqueness_of :email, message: 'Email đã được sử dụng.'
+                      message: I18n.t(:usr_val_err)
+  validates_presence_of :email, message: I18n.t(:email_blank_err)
+  validates_uniqueness_of :email, message: I18n.t(:email_unique_err)
   validates_format_of :email,
                       with: /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i,
-                      message: 'Email không hợp lệ.'
+                      message: I18n.t(:email_val_err)
   validates_presence_of :password,
                         if: :password_required?,
-                        message: 'Vui lòng nhập mật khẩu.'
+                        message: I18n.t(:pwd_blank_err)
   validates_length_of :password,
                       minimum: 6,
-                      message: 'Mật khẩu phải có ít nhất 6 kí tự.'
+                      message: I18n.t(:pwd_length_err)
   validates_confirmation_of :password,
-                            message: 'Không khớp mật khẩu, vui lòng xác nhận lại.'
+                            message: I18n.t(:pwd_confirm_err)
 
   before_save :encrypt_new_password
 

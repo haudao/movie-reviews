@@ -21,17 +21,17 @@ function validateUsername(username) {
   var err_count = 0;
   var usr_elem = getParent('username');
   if (username == "") {
-    showErrorMessage(usr_elem, 'user_msg', 'Vui lòng nhập tên người dùng.');
+    showErrorMessage(usr_elem, 'user_msg', I18n.t('usr_blank_err'));
     err_count += 1;
   }
   else {
     if (username.length < 6) {
-      showErrorMessage(usr_elem, 'user_msg', 'Tên người dùng phải có ít nhất 6 kí tự.');
+      showErrorMessage(usr_elem, 'user_msg', I18n.t('usr_length_err'));
       err_count += 1;
     }
     else {
       if (!/^[0-9a-zA-Z_.-]+$/.test(username)) {
-        showErrorMessage(usr_elem, 'user_msg', 'Tên người dùng không hợp lệ.');
+        showErrorMessage(usr_elem, 'user_msg', I18n.t('usr_val_err'));
         err_count += 1;
       }
     }
@@ -43,12 +43,12 @@ function validateEmail(email) {
   var err_count = 0;
   var email_elem = getParent('email');
   if (email == "") {
-    showErrorMessage(email_elem, 'email_msg', 'Vui lòng nhập email.');
+    showErrorMessage(email_elem, 'email_msg', I18n.t('email_blank_err'));
     err_count += 1;
   }
   else {
     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      showErrorMessage(email_elem, 'email_msg', 'Email không hợp lệ.');
+      showErrorMessage(email_elem, 'email_msg', I18n.t('email_val_err'));
       err_count += 1;
     }
   }
@@ -59,23 +59,23 @@ function validatePassword(pwd, pwd_confirm) {
   var err_count = 0;
   var pwd_elem = getParent('pwd');
   if (pwd == "") {
-    showErrorMessage(pwd_elem, 'pwd_msg', 'Vui lòng nhập mật khẩu.');
+    showErrorMessage(pwd_elem, 'pwd_msg', I18n.t('pwd_blank_err'));
     err_count += 1;
   }
   else {
     if (pwd.length < 6) {
-      showErrorMessage(pwd_elem, 'pwd_msg', 'Mật khẩu phải có ít nhất 6 kí tự.');
+      showErrorMessage(pwd_elem, 'pwd_msg', I18n.t('pwd_length_err'));
       err_count += 1;
     }
     else {
       var pwd_confirm_elem = getParent('pwd_confirm');
       if (pwd_confirm == "") {
-        showErrorMessage(pwd_confirm_elem, 'pwd_confirm_msg', 'Vui lòng xác nhận mật khẩu.');
+        showErrorMessage(pwd_confirm_elem, 'pwd_confirm_msg', I18n.t('pwd_confirm_blank_err'));
         err_count += 1;
       }
       else {
         if (pwd !== pwd_confirm) {
-          showErrorMessage(pwd_confirm_elem, 'pwd_confirm_msg', 'Không khớp mật khẩu, vui lòng xác nhận lại.');
+          showErrorMessage(pwd_confirm_elem, 'pwd_confirm_msg', I18n.t('pwd_confirm_err'));
           err_count += 1;
         }
       }

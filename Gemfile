@@ -27,6 +27,7 @@ gem 'delayed_job_active_record'
 gem 'haml'
 gem 'i18n-js'
 gem 'nokogiri'
+gem 'shoulda'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

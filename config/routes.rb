@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :movies, only: %i(index show) do
-    resources :comments
+    resources :comments, only: %i(new create destroy)
   end
   resources :users, only: %i(new create)
   get '/signup' => 'users#new', :as => 'signup'

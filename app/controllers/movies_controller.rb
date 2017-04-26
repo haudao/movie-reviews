@@ -1,7 +1,11 @@
 class MoviesController < ApplicationController
   def index
     DataService.new.delay.crawl_data
-    @movies = Movie.all
+    if params[:q]
+      @movies = Movie.search(params[:q])
+    else
+      @movies = Movie.all
+    end
   end
 
   def show
